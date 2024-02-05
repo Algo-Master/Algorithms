@@ -19,7 +19,7 @@ bool subsetSumToK(ll n, ll k, vector<ll> &arr) {
                 dp_tab[i][j]=1;
                 if(j+arr[i]<=k) dp_tab[i][j+arr[i]]=1;
             }
-            else if(j==arr[i]) dp_tab[i][j]=1;
+            if(j==arr[i]) dp_tab[i][j]=1;
         }
     }
 
