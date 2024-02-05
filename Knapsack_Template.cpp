@@ -19,7 +19,7 @@ ll knapsack(vector<ll> weight, vector<ll> value, ll n, ll mW)
                 dp_tab[i][j]=max(dp_tab[i][j], dp_tab[i-1][j]);
                 if(j+weight[i]<=mW) dp_tab[i][j+weight[i]]=max(dp_tab[i][j+weight[i]], dp_tab[i-1][j] + value[i]);
             }
-            else if(j==weight[i]) dp_tab[i][j]=max(dp_tab[i][j],value[i]);
+            if(j==weight[i]) dp_tab[i][j]=max(dp_tab[i][j],value[i]);
         }
     }
 	ll mx = 0;
